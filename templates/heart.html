@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='heart.css') }}">
+</head>
+
+<body>
+
+<div class="dashboard-btn">
+    <a href="/">🏠 Dashboard</a>
+</div>
+
+<div class="container">
+
+    <div class="title-box">
+        <h1>Heart Disease Prediction</h1>
+        <p>Predict the possibility of heart disease using patient details.</p>
+    </div>
+
+    <form action="/heart" method="POST">
+
+    <div class="input-group">
+        <label>Age</label>
+        <input type="text" name="age" placeholder="Enter Age">
+    </div>
+
+    <div class="input-group">
+        <label>Sex</label>
+        <input type="text" name="sex" placeholder="Enter Sex (0 = Female, 1 = Male)">
+    </div>
+
+    <div class="input-group">
+        <label>Chest Pain Type (cp)</label>
+        <input type="text" name="cp" placeholder="Enter Chest Pain Type">
+    </div>
+
+    <div class="input-group">
+        <label>Resting Blood Pressure (trestbps)</label>
+        <input type="text" name="trestbps" placeholder="Enter Resting Blood Pressure">
+    </div>
+
+    <div class="input-group">
+        <label>Cholesterol (chol)</label>
+        <input type="text" name="chol" placeholder="Enter Cholesterol">
+    </div>
+
+    <div class="input-group">
+        <label>Fasting Blood Sugar (fbs)</label>
+        <input type="text" name="fbs" placeholder="Enter Fasting Blood Sugar">
+    </div>
+
+    <div class="input-group">
+        <label>Resting ECG (restecg)</label>
+        <input type="text" name="restecg" placeholder="Enter Resting ECG">
+    </div>
+
+    <div class="input-group">
+        <label>Maximum Heart Rate (thalach)</label>
+        <input type="text" name="thalach" placeholder="Enter Maximum Heart Rate">
+    </div>
+
+    <div class="input-group">
+        <label>Exercise Induced Angina (exang)</label>
+        <input type="text" name="exang" placeholder="Enter Exercise Induced Angina">
+    </div>
+
+    <div class="input-group">
+        <label>Old Peak</label>
+        <input type="text" name="oldpeak" placeholder="Enter Old Peak">
+    </div>
+
+    <div class="input-group">
+        <label>Slope</label>
+        <input type="text" name="slope" placeholder="Enter Slope">
+    </div>
+
+    <div class="input-group">
+        <label>Number of Major Vessels (ca)</label>
+        <input type="text" name="ca" placeholder="Enter Number of Major Vessels">
+    </div>
+
+    <div class="input-group">
+        <label>Thal</label>
+        <input type="text" name="thal" placeholder="Enter Thal">
+    </div>
+
+    <div class="btn-box">
+        <button type="submit">Predict</button>
+    </div>
+
+</form>
+
+    {% if prediction_text %}
+    <div class="result">
+        <h2>{{ prediction_text }}</h2>
+    </div>
+    {% endif %}
+
+</div>
+
+</body>
+</html>

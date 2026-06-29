@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titanic Survival Prediction</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='titanic.css') }}">
+</head>
+
+<body>
+
+<div class="dashboard-btn">
+    <a href="/">🏠 Dashboard</a>
+</div>
+
+<div class="left-content">
+    <h1>🚢 TITANIC</h1>
+
+    <h3>Machine Learning Project</h3>
+
+    <p>
+        Predict passenger survival using machine learning algorithms
+        based on important passenger information such as class, age,
+        gender, fare, family members, and embarkation port.
+    </p>
+
+    <div class="info-box">
+        <div class="card">
+            <h4>📊 Features</h4>
+            <p>7 Passenger Attributes</p>
+        </div>
+
+        <div class="card">
+            <h4>🤖 Model</h4>
+            <p>Classification</p>
+        </div>
+
+        <div class="card">
+            <h4>⚡ Prediction</h4>
+            <p>Survived / Not Survived</p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="title-box">
+        <h1>🚢 Titanic Survival Prediction</h1>
+        <p>Predict whether a passenger would survive based on passenger details.</p>
+    </div>
+
+    <form action="/titanic" method="POST">
+
+        <div class="form-row">
+            <label>Pclass</label>
+            <input type="text" name="pclass" placeholder="Enter Pclass">
+        </div>
+
+        <div class="form-row">
+            <label>Sex</label>
+            <input type="text" name="sex" placeholder="0 = Female, 1 = Male">
+        </div>
+
+        <div class="form-row">
+            <label>Age</label>
+            <input type="text" name="age" placeholder="Enter Age">
+        </div>
+
+        <div class="form-row">
+            <label>SibSp</label>
+            <input type="text" name="sibsp" placeholder="Enter SibSp">
+        </div>
+
+        <div class="form-row">
+            <label>Parch</label>
+            <input type="text" name="parch" placeholder="Enter Parch">
+        </div>
+
+        <div class="form-row">
+            <label>Fare</label>
+            <input type="text" name="fare" placeholder="Enter Fare">
+        </div>
+
+        <div class="form-row">
+            <label>Embarked</label>
+            <input type="text" name="embarked" placeholder="Enter Embarked">
+        </div>
+
+        <div class="btn-box">
+            <button type="submit">⚓ Predict Survival</button>
+        </div>
+
+    </form>
+
+    {% if prediction_text %}
+    <div class="result">
+        <h2>{{ prediction_text }}</h2>
+    </div>
+    {% endif %}
+
+</div>
+
+</body>
+</html>

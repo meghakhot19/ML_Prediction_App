@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Tennis Prediction</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='ten.css') }}">
+</head>
+<body>
+
+<div class="dashboard-btn">
+    <a href="/">🏠 Dashboard</a>
+</div>
+<div class="left-content">
+    <h1>🎾 Play Tennis</h1>
+    <p>
+        Machine Learning model that predicts whether a tennis match
+        should be played based on weather conditions.
+    </p>
+</div>
+
+<div class="container">
+
+    <div class="title-box">
+        <h1>🎾 Play Tennis Prediction</h1>
+        <p>Predict whether the match should be played based on weather conditions.</p>
+    </div>
+
+    <form action="/tennis" method="POST">
+
+        <div class="form-row">
+            <label>Day</label>
+            <input type="text" name="day" placeholder="Enter Day">
+        </div>
+
+        <div class="form-row">
+            <label>Outlook</label>
+            <input type="text" name="outlook" placeholder="Enter Outlook">
+        </div>
+
+        <div class="form-row">
+            <label>Temperature</label>
+            <input type="text" name="temp" placeholder="Enter Temperature">
+        </div>
+
+        <div class="form-row">
+            <label>Humidity</label>
+            <input type="text" name="humidity" placeholder="Enter Humidity">
+        </div>
+
+        <div class="form-row">
+            <label>Wind</label>
+            <input type="text" name="wind" placeholder="Enter Wind">
+        </div>
+
+        <div class="btn-box">
+            <button type="submit">Predict</button>
+        </div>
+
+    </form>
+
+    {% if prediction_text %}
+    <div class="result">
+        <h2>{{ prediction_text }}</h2>
+    </div>
+    {% endif %}
+
+</div>
+
+</body>
+</html>
