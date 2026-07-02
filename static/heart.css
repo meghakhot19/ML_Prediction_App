@@ -121,13 +121,90 @@ button:hover{
 }
 @media (max-width:768px){
 
+    body{
+        padding:15px;
+        align-items:flex-start;
+        background-attachment:scroll;
+    }
+
+    .dashboard-btn{
+        position:relative;
+        top:0;
+        left:0;
+        width:100%;
+        margin-bottom:20px;
+        text-align:center;
+    }
+
+    .dashboard-btn a{
+        display:block;
+        width:100%;
+    }
+
+    .container{
+        max-width:100%;
+        padding:25px;
+    }
+
+    .title-box h1{
+        font-size:28px;
+    }
+
+    .title-box p{
+        font-size:14px;
+    }
+
     form{
         grid-template-columns:1fr;
+        gap:15px;
     }
 
     .btn-box,
     .result{
         grid-column:1;
+    }
+
+    button{
+        width:100%;
+    }
+
+}
+
+/* ===========================
+   Small Mobile Phones
+=========================== */
+
+@media (max-width:480px){
+
+    body{
+        padding:10px;
+    }
+
+    .container{
+        padding:18px;
+        border-radius:18px;
+    }
+
+    .title-box h1{
+        font-size:24px;
+    }
+
+    .title-box p{
+        font-size:13px;
+    }
+
+    label{
+        font-size:13px;
+    }
+
+    input{
+        padding:11px;
+        font-size:14px;
+    }
+
+    button{
+        font-size:15px;
+        padding:13px;
     }
 
 }

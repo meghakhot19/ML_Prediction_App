@@ -94,16 +94,57 @@ button:hover{
     transform:translateY(-2px);
 }
 
-@media(max-width:768px){
+/* ==============================
+   Tablet & Mobile Responsive
+============================== */
+
+@media (max-width:768px){
+
+    body{
+        padding:15px;
+        align-items:flex-start;
+    }
+
+    .container{
+        max-width:100%;
+        padding:25px;
+        margin-top:70px;
+    }
+
+    .title-box h1{
+        font-size:28px;
+    }
+
+    .title-box p{
+        font-size:14px;
+    }
+
     form{
         grid-template-columns:1fr;
+        gap:15px;
     }
 
     .btn-box{
         grid-column:span 1;
     }
 
+    button{
+        width:100%;
+        padding:14px;
+    }
 
+    .dashboard-btn{
+        position:relative;
+        top:0;
+        left:0;
+        margin-bottom:20px;
+        text-align:center;
+    }
+
+    .dashboard-btn a{
+        display:inline-block;
+        width:100%;
+    }
 
 }
 .dashboard-btn{
@@ -127,4 +168,42 @@ button:hover{
 .dashboard-btn a:hover{
     background:#1d4ed8;
     transform:translateY(-2px);
+}
+
+/* ==============================
+   Small Mobile Phones
+============================== */
+
+@media (max-width:480px){
+
+    body{
+        padding:10px;
+    }
+
+    .container{
+        padding:18px;
+        border-radius:15px;
+    }
+
+    .title-box h1{
+        font-size:24px;
+    }
+
+    .title-box p{
+        font-size:13px;
+    }
+
+    label{
+        font-size:13px;
+    }
+
+    input{
+        font-size:14px;
+        padding:11px;
+    }
+
+    button{
+        font-size:15px;
+    }
+
 }
